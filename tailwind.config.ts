@@ -86,7 +86,6 @@ const config = {
         creditCard: "8px 10px 16px 0px rgba(0, 0, 0, 0.05)",
       },
       fontFamily: {
-        inter: "var(--font-inter)",
         "open-sans": "var(--font-open-sans)",
       },
       keyframes: {

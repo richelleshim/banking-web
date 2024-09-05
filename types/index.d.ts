@@ -43,16 +43,30 @@ declare interface SidebarProps {
 }
 
 declare type SignUpParams = {
-  firstName: string;
-  lastName: string;
-  address1: string;
-  city: string;
-  state: string;
-  postalCode: string;
-  dateOfBirth: string;
-  ssn: string;
+  firstName?: string;
+  lastName?: string;
+  address1?: string;
+  city?: string;
+  state?: string;
+  postalCode?: string;
+  dateOfBirth?: string;
+  ssn?: string;
   email: string;
   password: string;
+};
+
+declare type Account = {
+  id: string;
+  availableBalance: number;
+  currentBalance: number;
+  officialName: string;
+  mask: string;
+  institutionId: string;
+  name: string;
+  type: string;
+  subtype: string;
+  appwriteItemId: string;
+  sharableId: string;
 };
 
 declare type LoginUser = {
@@ -63,4 +77,95 @@ declare type LoginUser = {
 declare interface signInProps {
   email: string;
   password: string;
+}
+
+declare type Account = {
+  id: string;
+  availableBalance: number;
+  currentBalance: number;
+  officialName: string;
+  mask: string;
+  institutionId: string;
+  name: string;
+  type: string;
+  subtype: string;
+  appwriteItemId: string;
+  shareableId: string;
+};
+
+declare interface AuthFormProps {
+  type: "sign-in" | "sign-up";
+}
+
+// Actions
+declare interface getAccountsProps {
+  userId: string;
+}
+
+declare interface getAccountProps {
+  appwriteItemId: string;
+}
+
+declare interface getInstitutionProps {
+  institutionId: string;
+}
+
+declare interface getTransactionsProps {
+  accessToken: string;
+}
+
+declare interface CreateFundingSourceOptions {
+  customerId: string; // Dwolla Customer ID
+  fundingSourceName: string; // Dwolla Funding Source Name
+  plaidToken: string; // Plaid Account Processor Token
+  _links: object; // Dwolla On Demand Authorization Link
+}
+
+declare interface CreateTransactionProps {
+  name: string;
+  amount: string;
+  senderId: string;
+  senderBankId: string;
+  receiverId: string;
+  receiverBankId: string;
+  email: string;
+}
+
+declare interface getTransactionsByBankIdProps {
+  bankId: string;
+}
+
+declare interface signInProps {
+  email: string;
+  password: string;
+}
+
+declare interface getUserInfoProps {
+  userId: string;
+}
+
+declare interface exchangePublicTokenProps {
+  publicToken: string;
+  user: User;
+}
+
+declare interface createBankAccountProps {
+  accessToken: string;
+  userId: string;
+  accountId: string;
+  bankId: string;
+  fundingSourceUrl: string;
+  shareableId: string;
+}
+
+declare interface getBanksProps {
+  userId: string;
+}
+
+declare interface getBankProps {
+  documentId: string;
+}
+
+declare interface getBankByAccountIdProps {
+  accountId: string;
 }

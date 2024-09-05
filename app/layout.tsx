@@ -1,10 +1,10 @@
 export const dynamic = "force-dynamic";
 
 import type { Metadata } from "next";
-import { Inter, Open_Sans } from "next/font/google";
+import {  Open_Sans } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+// const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const openSans = Open_Sans({
   subsets: ["latin"],
   weight: ["400", "700"],
@@ -26,9 +26,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${openSans.variable}`}>
+      <body className={`${openSans.variable}`}>
         {children}
       </body>
     </html>
   );
 }
+
+// {`${inter.variable}

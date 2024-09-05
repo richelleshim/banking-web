@@ -32,13 +32,13 @@ const MobileNav = ({ user }: MobileNavProps) => {
             className="cursor-pointer flex items-center gap-1 px-4"
           >
             <Image
-              src="/icons/logo.svg"
+              src="/icons/plutusLogo.svg"
               width={34}
               height={34}
-              alt="Horizon logo"
+              alt="Plutus logo"
             />
             <h1 className="text-26 font-open-sans font-bold text-black-1">
-              Horizon
+              Plutus
             </h1>
           </Link>
           <div className="mobilenav-sheet">
@@ -54,8 +54,7 @@ const MobileNav = ({ user }: MobileNavProps) => {
                       <Link
                         href={item.route}
                         key={item.label}
-                        className={cn("mobilenav-sheet_close w-full", {
-                        })}
+                        className={cn("mobilenav-sheet_close w-full", {})}
                       >
                         <Image
                           src={item.imgURL}

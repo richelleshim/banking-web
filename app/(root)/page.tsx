@@ -1,12 +1,14 @@
 import HeaderTemplate from "@/components/HeaderTemplate";
-import React from "react";
+import { getLoggedInUser } from "@/lib/actions/user.actions";
 
-const Home = () => {
-  const loggedIn = {
-    firstName: "Richelle",
-    lastName: "Shim",
-    email: "richelleshim@gmail.com",
-  };
+const Home = async () => {
+  const loggedIn = await getLoggedInUser();
+
+  // const loggedIn = {
+  //   firstName: "Richelle",
+  //   lastName: "Shim",
+  //   email: "richelleshim@gmail.com",
+  // };
   return (
     <section className="home">
       <div className="home-content">
@@ -14,11 +16,10 @@ const Home = () => {
           <HeaderTemplate
             type="greeting"
             title="Welcome"
-            user={loggedIn?.firstName || "Guest"}
+            user={loggedIn?.name || "Guest"}
             subtext="Access and manage your account and transactions efficiently"
           />
         </header>
-        
       </div>
     </section>
   );
