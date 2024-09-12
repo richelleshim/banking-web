@@ -104,7 +104,7 @@ const AuthForm = ({ type }: { type: string }) => {
                   </div>
                   <CustomInput
                     control={form.control}
-                    name="address"
+                    name="address1"
                     label="Address"
                     placeholder="ex: 123 Street"
                     formMessage="Please enter a valid name"
